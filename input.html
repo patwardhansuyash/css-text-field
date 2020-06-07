@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InputBox</title>
+    <style>
+       
+       form{
+            position: absolute;
+            top: 50%;
+            left: 35%;
+        }
+        .line{
+            height: 1px;
+            width: 400px;
+            background-color: grey;
+        }
+
+        .line::before{
+            content: '';
+            height: 2px;
+            width: 0px;
+            position: absolute;
+            background-color: #26a69a;
+        }
+
+        .trigger{
+            border: none;
+            width: 400px;
+            outline: none;
+            background: transparent;
+            transition: ease-in-out .4s;
+            font-size: 20px;
+
+            
+        }
+        
+      
+       
+        form input:focus + label, form input:not(:placeholder-shown) + label{
+            transform: translateY(-25px);
+            font-size: 12px;
+            
+        }
+
+        form input:focus ~ .line::before{
+            animation: name1 1s forwards ease-in-out;
+        }
+      
+
+        .labx{
+            position: absolute;
+            left: 1%;
+            transform: translateY(0px);
+            color: grey;
+            transition: ease-in-out .4s;
+            
+        }   
+
+        @keyframes name1{
+            to{
+                width: 400px;
+                height: 2px;
+                
+            }
+        } 
+        .formelement{
+            margin-bottom: 50px;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="formelement">
+        <input class="trigger"type="text" placeholder="  ">
+        <label class="labx" for="input"> First Name</label>
+        <div class="line"></div>
+        </div>
+        <div class="formelement">
+            <input class="trigger"type="text" placeholder="  ">
+            <label class="labx" for="input"> Last Name</label>
+            <div class="line"></div>
+            </div>
+            <div class="formelement">
+                <input class="trigger"type="Password" placeholder="  ">
+                <label class="labx" for="input">Password</label>
+                <div class="line"></div>
+                </div>
+    </form>
+    
+
+</body>
+</html>
